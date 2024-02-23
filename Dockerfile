@@ -16,4 +16,4 @@ WORKDIR /app
 COPY --from=build target/DockerApp.jar ./docker-app.jar
 COPY --from=build target/dependency ./lib
 
-ENTRYPOINT ["java", "-cp", "./lib/*:./docker-app.jar", "org/dockerlaunced/DockerLauncedApplication"]
+ENTRYPOINT ["java", "-cp", "./lib/*:./docker-app.jar", "org/dockerlaunched/DockerLaunchedApplication"]

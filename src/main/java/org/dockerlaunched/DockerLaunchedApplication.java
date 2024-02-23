@@ -1,13 +1,13 @@
-package org.dockerlaunced;
+package org.dockerlaunched;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DockerLauncedApplication {
+public class DockerLaunchedApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DockerLauncedApplication.class, args);
+        SpringApplication.run(DockerLaunchedApplication.class, args);
     }
 
 }
