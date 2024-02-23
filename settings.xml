@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <proxies>
+        <proxy>
+            <id>myproxy</id>
+            <active>true</active>
+            <protocol>http</protocol>
+            <username>root</username>  <!-- Put your username here -->
+            <password>pass</password>  <!-- Put your password here -->
+            <host>192.168.0.103</host>   <!-- Put the IP address of your proxy server here -->
+            <port>80</port>            <!-- Put your proxy server's port number here -->
+        </proxy>
+    </proxies>
+</settings>
