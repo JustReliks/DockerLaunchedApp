@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 public class EnvConfig {
 
-    @Value("env.property:NONE")
+    @Value("${env.property:NONE}")
     private String envProperty;
 
 }
