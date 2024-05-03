@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-service-deployment
+  labels:
+    app: docker-service
+spec:
+  selector:
+    matchLabels:
+      app: docker-service
+  template:
+    metadata:
+      labels:
+        app: docker-service
+    spec:
+      containers:
+        - name: docker-service
+          image: spring-app:2.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ENV_PROPERTY
+              value: k8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-service-svc
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      name: http
+  selector:
+    app: docker-service
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: docker-service-ingress
+spec:
+  rules:
+    - host: docker-service.ru
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: docker-service-svc
+                port:
+                  name: http
